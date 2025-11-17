@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Employee{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h3>Edit Employee Details</h3>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'updateemployee' data.empid %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="empid" value="{{ data.empid }}">
+                    <div class="mb-3">
+                        <label for="ename" class="form-label">Employee Name:</label>
+                        <input type="text" name="ename" id="ename" class="form-control" value="{{ data.ename }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="desg" class="form-label">Designation:</label>
+                        <input type="text" name="desg" id="desg" class="form-control" value="{{ data.desg }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="salary" class="form-label">Salary:</label>
+                        <input type="text" name="salary" id="salary" class="form-control" value="{{ data.salary }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Current Image:</label>
+                        {% if data.image %}
+                            <img src="{{ data.image.url }}" alt="{{ data.ename }}" class="img-thumbnail mb-2" style="max-width: 150px;">
+                        {% else %}
+                            <p>No image uploaded.</p>
+                        {% endif %}
+                        <input type="file" name="image" id="image" class="form-control">
+                        <div class="form-text">Upload a new image to replace the current one.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Update Employee</button>
+                </form>
+                <div class="mt-3 text-center">
+                    <a href="{% url 'viewemployee' %}" class="btn btn-secondary me-2">View Employees</a>
+                    <a href="{% url 'home' %}" class="btn btn-info">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+body{
+    background-color: #f8f9fa; /* Light background for the page */
+}
+
+h1{
+    background-color: aliceblue;
+}
+
+.form-custom-container {
+    background-color: #f0f2f5; /* Light grey background for the form container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limit width for better appearance */
+    width: 100%;
+}
+
+.custom-pink-btn {
+    background-color: #e91e63; /* Pink color from the image */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.custom-pink-btn:hover {
+    background-color: #d81b60; /* Darker pink on hover */
+    color: white;
+}
+
+/* Adjust form-control for better visual */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.navbar-custom {
+    background-color: #e91e63; /* Pink color */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff; /* White text */
+}
+
+.navbar-custom .nav-link:hover {
+    color: #dddddd; /* Light grey on hover */
+}
